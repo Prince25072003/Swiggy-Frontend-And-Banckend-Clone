@@ -14,7 +14,8 @@ const redisClient = require("./config/redis");
 const cors = require("cors");
 
 app.use(cors({
-    origin: "http://localhost:1234"
+    origin: process.env.CLIENT_URL || "http://localhost:1234",
+    credentials: true,
 }));
 
 app.use(express.json());
@@ -25,18 +26,12 @@ app.use("/user",userRouter);
 
 const InitlizeConnection = async ()=>{
     try{
-           
-    //    await redisClient.connect();
-    //    console.log("Connected to Redis");
-
-    //    await main();
-    //    console.log("Connected to DB");
-
-    await Promise.all([redisClient.connect(),main()])  // both server execute parallel
+     
+    await Promise.all([redisClient.connect(), main()]);
     console.log("DB Connected");
 
-       app.listen(process.env.PORT,()=>{
-       console.log("Listen at port 3000");
+       app.listen(process.env.PORT || 5000, ()=>{
+       console.log("Listen at port " + (process.env.PORT || 5000));
        })
     }
     catch(err){
