@@ -3,8 +3,8 @@ const userAuth = require("../middleware/userAuth");
 const User = require("../users");
 const cors = require("cors");
 
-app.use(cors());
 const userRouter = express.Router();
+userRouter.use(cors());
 
 userRouter.get("/resturant", async (req,res)=>{  // here first user authenticate then function execute
     try{
