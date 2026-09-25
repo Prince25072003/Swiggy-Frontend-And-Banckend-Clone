@@ -8,7 +8,7 @@ export default function Restaurant(){
     useEffect(()=>{
         
         async function fetchData() {
-           const proxyServer =  process.env.API_URL;
+           const proxyServer =  process.env.REACT_APP_API_URL;
            const response = await fetch(proxyServer);
            const data = await response.json();
            setRestData(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
