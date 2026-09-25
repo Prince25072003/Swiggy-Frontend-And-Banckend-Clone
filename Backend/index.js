@@ -1,3 +1,5 @@
+require('dotenv').config();   // attach .env file details to process.env before using them
+
 const express = require("express");
 const app = express();
 const main = require("./database");
@@ -7,7 +9,6 @@ const bcrypt = require("bcrypt");
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const userAuth = require("./middleware/userAuth");
-require('dotenv').config();   // it attach .env file detail in Global Object
 const authRouter = require("./routes/auth");
 const userRouter = require("./routes/user");
 const redisClient = require("./config/redis");

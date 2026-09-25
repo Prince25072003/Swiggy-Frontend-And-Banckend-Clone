@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: swiggy-backend
+    env: node
+    rootDir: Backend
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free
