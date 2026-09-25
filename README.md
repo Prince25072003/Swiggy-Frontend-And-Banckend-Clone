@@ -17,6 +17,7 @@
 - API-level & Schema-level validation
 - JWT Authentication
 - Authentication Middleware
+- Express.js
 - MongoDB
 - Redis
 - Rate Limiting
