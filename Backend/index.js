@@ -14,13 +14,31 @@ const userRouter = require("./routes/user");
 const redisClient = require("./config/redis");
 const cors = require("cors");
 
+const allowedOrigins = [
+    process.env.CLIENT_URL,
+    "http://localhost:1234",
+    "http://localhost:3000",
+    "http://127.0.0.1:1234",
+    "http://127.0.0.1:3000"
+].filter(Boolean);
+
 app.use(cors({
-    origin: process.env.CLIENT_URL || "http://localhost:1234",
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+            return;
+        }
+        callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
 }));
 
 app.use(express.json());
 app.use(cookieParser())
+
+app.get("/", (req, res) => {
+    res.json({ status: "ok", message: "Swiggy backend is running" });
+});
 
 app.use("/auth",authRouter);
 app.use("/user",userRouter);
