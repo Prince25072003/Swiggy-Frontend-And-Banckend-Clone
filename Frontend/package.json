@@ -1,0 +1,23 @@
+{
+  "name": "swiggy",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.12.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "parcel": "^2.16.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-redux": "^9.3.0",
+    "react-router": "^8.3.0",
+    "react-router-dom": "^6.30.4",
+    "tailwindcss": "^4.3.3"
+  }
+}
