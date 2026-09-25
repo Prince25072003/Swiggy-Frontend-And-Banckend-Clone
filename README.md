@@ -13,6 +13,7 @@
 
 ## ⚙️ Backend
 
+- REST API
 - API-level & Schema-level validation
 - JWT Authentication
 - Authentication Middleware
