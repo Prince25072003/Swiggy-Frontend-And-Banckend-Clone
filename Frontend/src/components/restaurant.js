@@ -13,7 +13,7 @@ export default function Restaurant(){
            const data = await response.json();
            setRestData(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         }
-    fetchData();
+    fetchData(); 
     },[])
     //console.log(RestData);
     //Shimmer Effect
@@ -24,10 +24,6 @@ export default function Restaurant(){
            {
               RestData.map((restInfo)=><RestCard key={restInfo?.info?.id} restInfo={restInfo}></RestCard>)
            }
-        </div>
-    )
-} 
-//https://proxy.corsfix.com/?
         </div>
     )
 } 
