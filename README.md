@@ -21,3 +21,23 @@
 - MongoDB
 - Redis
 - Rate Limiting
+
+Backend Commands:
+# Install dependencies
+npm install
+
+# Install Nodemon
+npm install nodemon
+
+# Start the backend
+node index.js
+
+# OR start with Nodemon
+npx nodemon index.js
+
+Frontend Commands:
+# Install dependencies
+npm install
+
+# Start the frontend with Parcel
+npx parcel index.html
